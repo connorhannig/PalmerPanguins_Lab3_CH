@@ -11,7 +11,7 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "About this site"
+    "text": "This is a Lab project testing ggplot2 to visualize data from the palmer’s penguins data set. The other goal was to get this website published, so if your reading this it was somewhat successful."
   },
   {
     "objectID": "ggplot_exploration.html",

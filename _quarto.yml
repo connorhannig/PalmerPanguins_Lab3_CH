@@ -7,7 +7,7 @@ website:
   navbar:
     left:
       - href: ggplot_exploration.qmd
-        text: Palmers Pegnuis
+        text: Palmers Pegnuins
       - about.qmd
       
 format:
