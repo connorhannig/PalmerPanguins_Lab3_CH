@@ -1,0 +1,89 @@
+---
+title: "Palmer's Penguins"
+format: html
+editor: visual
+---
+
+## 
+
+```{r}
+#| warning: false
+
+library(tidyverse)
+library(palmerpenguins)
+```
+
+```{r}
+#| warning: false
+penguins
+
+View(penguins)
+```
+
+# Single trait distribution
+
+This shows the bill length of three penguin species. it shows that the mean bill length of chinstrap penguins are the longest, and adelie is the shortest.
+
+```{r}
+  #| warning: false
+
+ggplot(data=penguins) +
+  geom_boxplot(mapping= aes(x=species, y=bill_length_mm,fill=species))+
+  #remove the legend
+  theme(legend.position = "none")
+```
+
+Body mass for three different species of penguin.
+
+```{r}
+#| warning: false
+ggplot(data=penguins) +
+  geom_jitter(mapping= aes(x=species, y=body_mass_g,))
+```
+
+# Relationship between multiple traits
+
+Flipper length as a function of body mass for three species of penguin, color indicates sex.
+
+```{r}
+#| warning: false
+ggplot(data=penguins) +
+  geom_point(mapping= aes(x=body_mass_g, y=flipper_length_mm, color=sex))+
+  facet_wrap(~species)+
+  theme_minimal()
+```
+
+Flipper length as a function of body mass for three species of penguin on three different islands.
+
+```{r}
+#| warning: false
+ggplot(
+  data = penguins,
+  mapping = aes(x = body_mass_g, y = flipper_length_mm, color = species)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  facet_wrap( ~ island) +
+  theme_minimal()
+```
+
+# Sexual dimorphism
+
+Here I have removed NA values so that there are only Males and Females box plots, and plotted the bill length by species with sex separated per species.
+
+```{r}
+#| warning: false
+penguins %>% 
+drop_na() %>% 
+ggplot() +
+  geom_boxplot( aes(x=species, y=bill_length_mm, fill=sex))+
+  theme_minimal()
+```
+
+Body mass of the three penguin species, color indicates sex.
+
+```{r}
+#| warning: false
+
+ggplot(data=penguins) +
+  geom_jitter(mapping= aes(x=species, y=body_mass_g,color=sex))
+```
