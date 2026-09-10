@@ -9,6 +9,7 @@ website:
       - href: index.qmd
         text: Home
       - about.qmd
+      - ggplot_exploration.qmd
 
 format:
   html:
