@@ -6,11 +6,10 @@ website:
   title: "PalmerPanguins_Lab3_CH"
   navbar:
     left:
-      - href: index.qmd
-        text: Home
+      - href: ggplot_exploration.qmd
+        text: Palmers Pegnuis
       - about.qmd
-      - ggplot_exploration.qmd
-
+      
 format:
   html:
     theme:
